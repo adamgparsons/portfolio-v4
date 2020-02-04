@@ -8,6 +8,12 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-catch-links",
     {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
