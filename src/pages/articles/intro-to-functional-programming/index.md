@@ -4,6 +4,7 @@ title: "Intro to Functional Programming in Javascript"
 intro: "Writing more efficient functions with functional programming"
 order: 2
 cover: "./two.jpg"
+type: "learning notes"
 ---
 
 # Intro to Functional Programming in Javascript

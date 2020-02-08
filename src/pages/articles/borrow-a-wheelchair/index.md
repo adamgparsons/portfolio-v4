@@ -1,9 +1,10 @@
 ---
 path: "/borrow-a-wheelchair"
-title: "Borrow a wheelchair"
+title: "British Red Cross Wheelchair Service"
 intro: "Redesigning how the Red Cross lends wheelchairs"
 order: 4
 cover: "./two.jpg"
+type: "case study"
 ---
 
 # Borrow a wheelchair

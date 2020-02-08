@@ -1,9 +1,10 @@
 ---
 path: "/shibagram"
-title: "Shibagram"
+title: "An Instagram alternative for Shiba Inu Lovers"
 intro: "An Instagram alternative for Shiba Inu lovers"
 order: 3
 cover: "./two.jpg"
+type: "personal project"
 ---
 
 # Shibagram

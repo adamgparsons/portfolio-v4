@@ -4,6 +4,7 @@ title: "Citizens Advice design system"
 intro: "Creating a design system to improve consistency, accessibility and performance for users."
 order: 1
 cover: "./one.jpg"
+type: "case study"
 ---
 
 # Citizens Advice design system"
