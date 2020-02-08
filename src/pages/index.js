@@ -2,8 +2,19 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import Img from "gatsby-image"
+import styled from "styled-components"
 
 // import '../css/index.css'; // add some style if you want!
+
+const Button = styled.button`
+  color: red;
+  font-family: "soleil";
+`
+
+const Test = styled.h1`
+  font-family: "soleil", sans-serif;
+  font-weight: 800;
+`
 
 export default function Index({ data }) {
   const { edges: posts } = data.allMarkdownRemark
@@ -17,7 +28,8 @@ export default function Index({ data }) {
               <h1>
                 <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
               </h1>
-              <h2>{post.frontmatter.date}</h2>
+              <Test>Hi I'm Adam</Test>
+              <h2>{post.frontmatter.intro}</h2>
               <p>{post.excerpt}</p>
               <img src={post.frontmatter.cover.publicURL} />
             </div>
