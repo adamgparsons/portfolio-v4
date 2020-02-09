@@ -35,8 +35,19 @@ export const pageQuery = graphql`
             cover {
               publicURL
               childImageSharp {
-                fixed(width: 730) {
-                  ...GatsbyImageSharpFixed
+                large: fixed(width: 400) {
+                  base64
+                  width
+                  height
+                  src
+                  srcSet
+                }
+                small: fixed(width: 275) {
+                  base64
+                  width
+                  height
+                  src
+                  srcSet
                 }
               }
             }

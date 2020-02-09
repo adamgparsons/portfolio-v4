@@ -53,9 +53,13 @@ const CardImageHolder = styled.div`
   grid-column: 1/4;
   border-bottom: 1px solid black;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding-top: 32px;
   padding-bottom: 32px;
+  padding-right: 32px;
+  padding-left: 32px;
+  height: 320px;
 
   ${({ backgroundColor }) =>
     `
@@ -67,6 +71,7 @@ background-color: ${backgroundColor}
     ${({ order }) =>
       order === 1 &&
       `
+      flex-direction: row;
     border-bottom: none;
     border-right: 1px solid black;
   `};
@@ -83,9 +88,9 @@ const CardDescription = styled.div`
   padding-bottom: ${theme.space[4]};
   padding-right: ${theme.space[4]};
   padding-left: ${theme.space[4]};
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; */
 
   @media (min-width: ${theme.breakpoints[1]}) {
     ${({ order }) =>
@@ -122,14 +127,21 @@ const ArticleIntro = styled.p`
 
 const ArticleCard = ({ post }) => {
   /* const { edges: posts } = data.allMarkdownRemark */
+
   return (
     <CardContainer key={post.frontmatter.id} order={post.frontmatter.order}>
       <CardImageHolder
         order={post.frontmatter.order}
         backgroundColor={post.frontmatter.themeColor}
       >
-        <CardImage src={post.frontmatter.cover.publicURL} />
-        {/* <Img fixed={post.frontmatter.cover.publicURL.childImageSharp.fixed} /> */}
+        <Img
+          fixed={
+            post.frontmatter.order === 1
+              ? post.frontmatter.cover.childImageSharp.large
+              : post.frontmatter.cover.childImageSharp.small
+          }
+        />
+        {console.log(post.frontmatter.cover.childImageSharp.small)}
       </CardImageHolder>
       <CardDescription order={post.frontmatter.order}>
         <ArticleType>{post.frontmatter.type}</ArticleType>
