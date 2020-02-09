@@ -5,6 +5,7 @@ intro: "Redesigning how the Red Cross lends wheelchairs"
 order: 4
 cover: "./two.jpg"
 type: "case study"
+themeColor: "#E86F68"
 ---
 
 # Borrow a wheelchair

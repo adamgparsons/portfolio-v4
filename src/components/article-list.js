@@ -8,7 +8,7 @@ const Container = styled.div``
 
 const ListHeading = styled.h3`
   ${theme.textStyles.heading1}
-  margin-bottom: ${theme.space[6]};
+  margin-bottom: ${theme.space[5]};
 `
 const Grid = styled.div`
   display: grid;

@@ -3,6 +3,8 @@ import { Link, graphql } from "gatsby"
 import styled from "styled-components"
 import theme from "../theme"
 
+const test = "grey800"
+
 const ButtonHolder = styled.div`
   position: relative;
   width: fit-content;
@@ -30,7 +32,8 @@ const ButtonLink = styled(props => <Link {...props} />)`
 `
 
 const Shadow = styled.span`
-  background-color: #ecb7b7;
+  /* background-color: #ecb7b7; */
+  background-color: white;
   position: absolute;
   z-index: -1;
   right: -6px;
@@ -39,16 +42,26 @@ const Shadow = styled.span`
   width: 100%;
   height: 48px;
 
+  ${({ color }) =>
+    `
+background-color: ${color}
+
+  `};
+
   /* box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; */
 `
 
-const Button = ({ to, children }) => (
-  <>
-    <ButtonHolder>
-      <ButtonLink to={to}>{children}</ButtonLink>
-      <Shadow />
-    </ButtonHolder>
-  </>
-)
+const Button = ({ to, children, themeColor }) => {
+  // console.log(themeColor)
+
+  return (
+    <>
+      <ButtonHolder>
+        <ButtonLink to={to}>{children}</ButtonLink>
+        <Shadow color={themeColor} />
+      </ButtonHolder>
+    </>
+  )
+}
 
 export default Button

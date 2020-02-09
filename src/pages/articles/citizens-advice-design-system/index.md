@@ -3,8 +3,9 @@ path: "/citizens-advice-design-system"
 title: "Citizens Advice design system"
 intro: "Creating a design system to improve consistency, accessibility and performance for users."
 order: 1
-cover: "./one.jpg"
+cover: "./citizens-advice.png"
 type: "case study"
+themeColor: "#4E97D0"
 ---
 
 # Citizens Advice design system"

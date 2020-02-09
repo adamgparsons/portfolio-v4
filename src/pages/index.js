@@ -31,6 +31,7 @@ export const pageQuery = graphql`
             type
             intro
             path
+            themeColor
             cover {
               publicURL
               childImageSharp {

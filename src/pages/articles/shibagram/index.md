@@ -5,6 +5,7 @@ intro: "An Instagram alternative for Shiba Inu lovers"
 order: 3
 cover: "./two.jpg"
 type: "personal project"
+themeColor: "#F3D7DA"
 ---
 
 # Shibagram

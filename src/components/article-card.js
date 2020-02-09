@@ -40,8 +40,17 @@ ${({ order }) =>
 
 const CardImageHolder = styled.div`
   grid-column: 1/4;
-  background-color: orange;
   border-bottom: 1px solid black;
+  display: flex;
+  justify-content: center;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  ${({ backgroundColor }) =>
+    `
+background-color: ${backgroundColor}
+
+  `};
 
   ${({ order }) =>
     order === 1 &&
@@ -50,6 +59,10 @@ const CardImageHolder = styled.div`
     border-right: 1px solid black;
 
   `}
+`
+
+const CardImage = styled.img`
+  margin-bottom: 0px;
 `
 
 const CardDescription = styled.div`
@@ -88,8 +101,11 @@ const ArticleCard = ({ post }) => {
   /* const { edges: posts } = data.allMarkdownRemark */
   return (
     <CardContainer key={post.frontmatter.id} order={post.frontmatter.order}>
-      <CardImageHolder order={post.frontmatter.order}>
-        <img src={post.frontmatter.cover.publicURL} />
+      <CardImageHolder
+        order={post.frontmatter.order}
+        backgroundColor={post.frontmatter.themeColor}
+      >
+        <CardImage src={post.frontmatter.cover.publicURL} />
       </CardImageHolder>
       <CardDescription order={post.frontmatter.order}>
         <ArticleType>{post.frontmatter.type}</ArticleType>
@@ -97,7 +113,13 @@ const ArticleCard = ({ post }) => {
           {post.frontmatter.title}
         </ArticleHeading>
         {post.frontmatter.order === 1 && <p>{post.frontmatter.intro}</p>}
-        <Button to={post.frontmatter.path}>Read more</Button>
+        <Button
+          to={post.frontmatter.path}
+          themeColor={post.frontmatter.themeColor}
+        >
+          Read more
+        </Button>
+        {console.log(post)}
       </CardDescription>
     </CardContainer>
   )

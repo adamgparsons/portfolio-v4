@@ -5,6 +5,7 @@ intro: "Writing more efficient functions with functional programming"
 order: 2
 cover: "./two.jpg"
 type: "learning notes"
+themeColor: "#FFE885"
 ---
 
 # Intro to Functional Programming in Javascript
