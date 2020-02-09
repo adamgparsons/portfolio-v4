@@ -12,8 +12,13 @@ const ListHeading = styled.h3`
 `
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 36px 1fr 36px 1fr;
-  grid-row-gap: 36px;
+  grid-template-columns: 1fr 24px 1fr 24px 1fr;
+  grid-row-gap: 24px;
+
+  @media (min-width: 980px) {
+    grid-template-columns: 1fr 36px 1fr 36px 1fr;
+    grid-row-gap: 36px;
+  }
 `
 
 const ArticleList = ({ data }) => {

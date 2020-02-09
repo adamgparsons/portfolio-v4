@@ -1,5 +1,5 @@
 const theme = {
-  breakpoints: ["500px", "750px", "1170px"],
+  breakpoints: ["500px", "850px", "1170px"],
   space: [
     "0px",
     "4px",

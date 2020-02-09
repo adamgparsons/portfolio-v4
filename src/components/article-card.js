@@ -3,39 +3,50 @@ import { Link, graphql } from "gatsby"
 import styled from "styled-components"
 import theme from "../theme"
 import Button from "./Button"
+import Img from "gatsby-image"
 
 const CardContainer = styled.div`
-  grid-column: span 3 / auto;
+  grid-column: span 7 / auto;
   border: 1px solid black;
   background-color: white;
 
-  ${({ order }) =>
-    order === 1 &&
-    `
+  @media (min-width: ${theme.breakpoints[1]}) {
+    grid-column: span 3 / auto;
+
+    ${({ order }) =>
+      order === 1 &&
+      `
     display: grid;
     grid-column: span 5 / auto;
-    grid-template-columns: 1fr 36px 1fr 36px 1fr; 
+    grid-template-columns: 1fr 24px 1fr 24px 1fr; 
+  `};
 
-  `}
-  ${({ order }) =>
-    order === 2 &&
-    `
+    ${({ order }) =>
+      order === 2 &&
+      `
     grid-column: 1/2;
-  `}
+  `};
 
-${({ order }) =>
-  order === 3 &&
-  `
+    ${({ order }) =>
+      order === 3 &&
+      `
     grid-column: 3/4;
-  `}
+  `};
 
-${({ order }) =>
-  order === 4 &&
-  `
+    ${({ order }) =>
+      order === 4 &&
+      `
     grid-column: 5/6;
+  `};
+  }
+
+  @media (min-width: 980px) {
+    ${({ order }) =>
+      order === 1 &&
+      `
+  grid-template-columns: 1fr 36px 1fr 36px 1fr; 
   `}
-
-
+  }
 `
 
 const CardImageHolder = styled.div`
@@ -52,13 +63,14 @@ background-color: ${backgroundColor}
 
   `};
 
-  ${({ order }) =>
-    order === 1 &&
-    `
+  @media (min-width: ${theme.breakpoints[1]}) {
+    ${({ order }) =>
+      order === 1 &&
+      `
     border-bottom: none;
     border-right: 1px solid black;
-
-  `}
+  `};
+  }
 `
 
 const CardImage = styled.img`
@@ -70,16 +82,19 @@ const CardDescription = styled.div`
   padding-top: ${theme.space[4]};
   padding-bottom: ${theme.space[4]};
   padding-right: ${theme.space[4]};
+  padding-left: ${theme.space[4]};
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  ${({ order }) =>
-    order !== 1 &&
-    `
-padding-left: ${theme.space[4]}
+  @media (min-width: ${theme.breakpoints[1]}) {
+    ${({ order }) =>
+      order === 1 &&
+      `
+padding-left: 0px;
 
   `};
+  }
 `
 const ArticleType = styled.p`
   ${theme.textStyles.body}
@@ -97,6 +112,14 @@ const ArticleHeading = styled(props => <Link {...props} />)`
   margin-bottom: ${theme.space[4]};
 `
 
+const ArticleIntro = styled.p`
+  display: none;
+
+  @media (min-width: ${theme.breakpoints[1]}) {
+    ${({ order }) => order === 1 && ` display:block`}
+  }
+`
+
 const ArticleCard = ({ post }) => {
   /* const { edges: posts } = data.allMarkdownRemark */
   return (
@@ -106,13 +129,16 @@ const ArticleCard = ({ post }) => {
         backgroundColor={post.frontmatter.themeColor}
       >
         <CardImage src={post.frontmatter.cover.publicURL} />
+        {/* <Img fixed={post.frontmatter.cover.publicURL.childImageSharp.fixed} /> */}
       </CardImageHolder>
       <CardDescription order={post.frontmatter.order}>
         <ArticleType>{post.frontmatter.type}</ArticleType>
         <ArticleHeading to={post.frontmatter.path}>
           {post.frontmatter.title}
         </ArticleHeading>
-        {post.frontmatter.order === 1 && <p>{post.frontmatter.intro}</p>}
+        <ArticleIntro order={post.frontmatter.order}>
+          {post.frontmatter.intro}
+        </ArticleIntro>
         <Button
           to={post.frontmatter.path}
           themeColor={post.frontmatter.themeColor}
