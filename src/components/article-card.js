@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 import styled from "styled-components"
 import theme from "../theme"
 import Button from "./Button"
@@ -77,24 +77,18 @@ background-color: ${backgroundColor}
   }
 `
 
-const CardImage = styled.img`
-  margin-bottom: 0px;
-`
-
 const CardDescription = styled.div`
   grid-column: 5/5;
   padding-top: ${theme.space[4]};
   padding-bottom: ${theme.space[4]};
   padding-right: ${theme.space[4]};
   padding-left: ${theme.space[4]};
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
 
   @media (min-width: ${theme.breakpoints[1]}) {
     ${({ order }) =>
       order === 1 &&
       `
+
 padding-left: 0px;
 
   `};

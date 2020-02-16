@@ -1,9 +1,7 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 import styled from "styled-components"
 import theme from "../theme"
-
-const test = "grey800"
 
 const ButtonHolder = styled.div`
   position: relative;

@@ -13,7 +13,7 @@ export default function Template({
       <div className="blog-post-container">
         <Helmet title={`Your Blog Name - ${post.frontmatter.title}`} />
         <div className="blog-post">
-          <img src={post.frontmatter.cover} />
+          {/* <img src={post.frontmatter.cover} alt="case study" /> */}
           <h1>{post.frontmatter.title}</h1>
           <div
             className="blog-post-content"

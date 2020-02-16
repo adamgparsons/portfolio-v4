@@ -1,5 +1,4 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
 import styled from "styled-components"
 import theme from "../theme"
 import ArticleCard from "../components/article-card"
@@ -25,6 +24,7 @@ const ListHeading = styled.h3`
   margin-bottom: 50px;
   position: relative;
   display: inline-block;
+
   &::after {
     content: "";
     position: absolute;
@@ -38,6 +38,7 @@ const ListHeading = styled.h3`
     right: -80px;
     top: 11px;
     transform: rotate(9deg);
+
 `
 const Grid = styled.div`
   display: grid;

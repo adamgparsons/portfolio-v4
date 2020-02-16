@@ -32,7 +32,7 @@ We catalogued and compared all UI elements on the public website. Most of the UI
 
 We reviewed the front-end code on the public website and found a variety of unique font sizes, colours, media queries and spacing used. Multiple CSS classes were doing the same thing which led to an unnecessarily bloated codebase.
 
-![UI audit](CAB_UI_design_system_audit_2.png)
+![UI audit](./CAB_UI_design_system_audit_2.png)
 
 ## Establishing our foundations
 

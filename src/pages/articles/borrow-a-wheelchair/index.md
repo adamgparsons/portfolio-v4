@@ -22,7 +22,7 @@ Up until recently, Mobility Aids had been operating the same way for the past 50
 
 I was a UX designer on the project responsible for conducting user research, prototyping and testing new ideas.
 
-![Workshop with volunteers](brc1.jpg)
+![Workshop with volunteers](../../articles/borrow-a-wheelchair/brc1.jpg)
 
 ## Discovery
 

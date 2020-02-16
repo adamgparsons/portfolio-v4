@@ -20,18 +20,8 @@ const Container = styled.div`
       opacity: 1;
     }
   }
-  @-webkit-keyframes fadein {
-    0% {
-      opacity: 0;
-    }
-    66% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
 `
+
 const Hi = styled.h2`
   ${theme.textStyles.heading1}
   margin-bottom: ${theme.space[5]};
