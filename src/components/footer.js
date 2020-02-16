@@ -6,7 +6,7 @@ const Container = styled.div`
   max-width: ${theme.breakpoints[2]};
   margin: 0 auto;
   margin-top: ${theme.space[7]};
-  margin-bottom: ${theme.space[5]};
+  padding-bottom: ${theme.space[5]};
 `
 
 const H5 = styled.h5`

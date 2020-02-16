@@ -44,14 +44,14 @@ So this time we've created a function called countAnimals. It takes in an array 
 
 To ensure your code is written in a functional simple follow these principles:
 
-**Use pure functions to avoid side effects**
+### Use pure functions to avoid side effects
 
 Pure functions don't rely on data outside the current function and don't change anything outside the function. This way you know when you know if you pass in a certain input you'll get a specific output.
 
-**Treat all data as immutable**
+### Treat all data as immutable
 
 By treating all data as immutable we can avoid a lot of unwanted bugs. By using ES6 features such as map, filter or forEach you can easily avoid data mutation. If you need to change state, create new state to protect it.
 
-**Write functions in a modular way**
+### Write functions in a modular way
 
 Writing functions is a small and focused way will allow them to be reused elsewhere in your project. These functions can then be composed together using higher order functions.

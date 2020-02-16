@@ -10,8 +10,8 @@ const Container = styled.div`
   align-items: center;
   max-width: ${theme.breakpoints[2]};
   margin: 0 auto;
-  margin-top: ${theme.space[6]};
-  margin-bottom: ${theme.space[6]};
+  padding-top: ${theme.space[6]};
+  padding-bottom: ${theme.space[6]};
   padding-left: ${theme.space[5]};
   padding-right: ${theme.space[5]};
   animation: 1s ease 0s normal forwards 1 fadein;
@@ -30,7 +30,7 @@ const Container = styled.div`
 `
 
 const Logo = styled(props => <Link {...props} />)`
-  ${theme.textStyles.heading2}
+  ${theme.textStyles.heading3}
   text-decoration:none;
   margin-bottom: 0px;
   transition: color 0.2s ease-in;
@@ -39,7 +39,7 @@ const Logo = styled(props => <Link {...props} />)`
   }
 `
 
-const ContactLink = styled(props => <Link {...props} />)`
+const ContactLink = styled.a`
   ${theme.textStyles.heading3}
   text-decoration:none;
   margin-top: 11px;
@@ -56,7 +56,7 @@ const Header = ({ siteTitle }) => (
       <h1 style={{ margin: 0 }}>
         <Logo to="/">Adam Parsons</Logo>
       </h1>
-      <ContactLink to="/contact">Contact</ContactLink>
+      <ContactLink href="mailto:adam@adamparsons.me">Get in touch</ContactLink>
     </Container>
   </header>
 )

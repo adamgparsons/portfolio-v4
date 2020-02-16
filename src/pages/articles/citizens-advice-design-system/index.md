@@ -8,7 +8,7 @@ type: "case study"
 themeColor: "#4E97D0"
 ---
 
-# Citizens Advice design system"
+# Citizens Advice design system
 
 Citizens Advice is a not-for-profit that helps millions of people across the UK by providing advice on a range of issues including benefits, employment and housing. The public [website](https://www.citizensadvice.org.uk/) provides free advice and receives over 25 million visits per year. To accommodate for the future growth of the Citizens Advice digital presence we built a design system.
 

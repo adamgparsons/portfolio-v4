@@ -22,8 +22,6 @@ Up until recently, Mobility Aids had been operating the same way for the past 50
 
 I was a UX designer on the project responsible for conducting user research, prototyping and testing new ideas.
 
-![Workshop with volunteers](../../articles/borrow-a-wheelchair/brc1.jpg)
-
 ## Discovery
 
 In the discovery phase our aim was to find out who the service users are and how well their needs are met. Over 4 weeks our team interviewed users and staff, ran workshops, reviewed analytics, mapped out the existing service and created a prototype. This provided us with key insights that informed what we’d do in alpha:

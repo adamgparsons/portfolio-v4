@@ -1,4 +1,5 @@
 import React from "react"
+import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import Hero from "../components/hero"
 import ArticleList from "../components/article-list"
@@ -8,7 +9,8 @@ import Footer from "../components/footer"
 
 export default function Index({ data }) {
   return (
-    <Layout>
+    <Layout page="home">
+      <Helmet title="Adam Parsons" />
       <Hero />
       <ArticleList data={data}></ArticleList>
       <Footer />
