@@ -14,15 +14,38 @@ const Container = styled.div`
   margin-bottom: ${theme.space[6]};
   padding-left: ${theme.space[5]};
   padding-right: ${theme.space[5]};
+  animation: 1s ease 0s normal forwards 1 fadein;
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    66% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    66% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `
 
 const Logo = styled(props => <Link {...props} />)`
   ${theme.textStyles.heading2}
   text-decoration:none;
   margin-bottom: 0px;
-
+  transition: color 0.2s ease-in;
   :hover {
-    border-bottom: 2px blue solid;
+    color: #4e97d0;
   }
 `
 
@@ -31,9 +54,9 @@ const ContactLink = styled(props => <Link {...props} />)`
   text-decoration:none;
   margin-bottom: 0px;
   border-bottom: 2px transparent solid;
-
+  transition: color 0.2s ease-in;
   :hover {
-    border-bottom: 2px ${theme.colors.grey700} solid;
+    color: #4e97d0;
   }
 `
 
