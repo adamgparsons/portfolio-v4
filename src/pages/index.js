@@ -1,11 +1,8 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import { Helmet } from "react-helmet"
-import Img from "gatsby-image"
-import styled from "styled-components"
 import Layout from "../components/layout"
 import Hero from "../components/hero"
 import ArticleList from "../components/article-list"
+import Footer from "../components/footer"
 
 // import '../css/index.css'; // add some style if you want!
 
@@ -14,6 +11,7 @@ export default function Index({ data }) {
     <Layout>
       <Hero />
       <ArticleList data={data}></ArticleList>
+      <Footer />
     </Layout>
   )
 }

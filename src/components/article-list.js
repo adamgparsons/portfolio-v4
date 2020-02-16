@@ -1,14 +1,44 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
 import styled from "styled-components"
 import theme from "../theme"
 import ArticleCard from "../components/article-card"
+import squiggle from "../images/squiggle.svg"
 
-const Container = styled.div``
+const Container = styled.div`
+  animation: 1s ease 0s normal forwards 1 fadein;
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    66% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+`
 
 const ListHeading = styled.h3`
-  ${theme.textStyles.heading1}
-  margin-bottom: ${theme.space[5]};
+  ${theme.textStyles.heading2}
+  margin-bottom: 50px;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    z-index: 0;
+    background-image: url(${squiggle});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 70px 70px;
+    right: -80px;
+    top: 11px;
+    transform: rotate(9deg);
+  }
 `
 const Grid = styled.div`
   display: grid;

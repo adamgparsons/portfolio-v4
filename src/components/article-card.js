@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 import styled from "styled-components"
 import theme from "../theme"
 import Button from "./Button"
@@ -55,11 +55,10 @@ const CardImageHolder = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  padding-right: 32px;
-  padding-left: 32px;
+  padding: 32px;
   height: 320px;
+
+  ${({ order }) => order === 1 && ` padding:0px`};
 
   ${({ backgroundColor }) =>
     `
@@ -72,14 +71,11 @@ background-color: ${backgroundColor}
       order === 1 &&
       `
       flex-direction: row;
-    border-bottom: none;
-    border-right: 1px solid black;
+      border-bottom: none;
+      border-right: 1px solid black;
+      padding:32px;
   `};
   }
-`
-
-const CardImage = styled.img`
-  margin-bottom: 0px;
 `
 
 const CardDescription = styled.div`
@@ -88,14 +84,12 @@ const CardDescription = styled.div`
   padding-bottom: ${theme.space[4]};
   padding-right: ${theme.space[4]};
   padding-left: ${theme.space[4]};
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
 
   @media (min-width: ${theme.breakpoints[1]}) {
     ${({ order }) =>
       order === 1 &&
       `
+
 padding-left: 0px;
 
   `};
@@ -140,6 +134,7 @@ const ArticleCard = ({ post }) => {
               ? post.frontmatter.cover.childImageSharp.large
               : post.frontmatter.cover.childImageSharp.small
           }
+          style={{ margin: "0 auto" }}
         />
         {console.log(post.frontmatter.cover.childImageSharp.small)}
       </CardImageHolder>

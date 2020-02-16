@@ -3,7 +3,7 @@ path: "/shibagram"
 title: "An Instagram alternative for Shiba Inu Lovers"
 intro: "An Instagram alternative for Shiba Inu lovers"
 order: 3
-cover: "./two.jpg"
+cover: "./shibshib.png"
 type: "personal project"
 themeColor: "#F3D7DA"
 ---
