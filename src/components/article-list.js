@@ -38,7 +38,7 @@ const ListHeading = styled.h3`
     right: -80px;
     top: 11px;
     transform: rotate(9deg);
-  }
+
 `
 const Grid = styled.div`
   display: grid;

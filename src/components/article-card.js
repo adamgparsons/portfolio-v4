@@ -59,7 +59,6 @@ const CardImageHolder = styled.div`
   height: 320px;
 
   ${({ order }) => order === 1 && ` padding:0px`};
-
   ${({ backgroundColor }) =>
     `
 background-color: ${backgroundColor}
@@ -71,9 +70,9 @@ background-color: ${backgroundColor}
       order === 1 &&
       `
       flex-direction: row;
-      border-bottom: none;
-      border-right: 1px solid black;
-      padding:32px;
+    border-bottom: none;
+    border-right: 1px solid black;
+    padding: 32px
   `};
   }
 `

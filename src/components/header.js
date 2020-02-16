@@ -27,26 +27,11 @@ const Container = styled.div`
       opacity: 1;
     }
   }
-
-  @-webkit-keyframes fadein {
-    0% {
-      opacity: 0;
-    }
-    66% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
 `
 
 const Logo = styled(props => <Link {...props} />)`
-  ${theme.textStyles.heading3};
-  color: ${theme.colors.grey900};
-  margin-bottom: ${theme.space[2]};
-  text-decoration: none;
-
+  ${theme.textStyles.heading2}
+  text-decoration:none;
   margin-bottom: 0px;
   transition: color 0.2s ease-in;
   :hover {
