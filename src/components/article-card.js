@@ -56,6 +56,8 @@ const CardImageHolder = styled.div`
   border-bottom: 1px solid black;
   padding: 32px;
   height: 320px;
+  /* display: flex;
+  flex-direction: column; */
 
   ${({ order }) => order === 1 && ` padding:0px`};
   ${({ backgroundColor }) =>
@@ -89,7 +91,7 @@ const CardDescription = styled.div`
       `
 
 padding-left: 0px;
-
+padding-bottom: 0px;
   `};
   }
 `
@@ -132,7 +134,10 @@ const ArticleCard = ({ post }) => {
               ? post.frontmatter.cover.childImageSharp.large
               : post.frontmatter.cover.childImageSharp.small
           }
-          style={{ maxWidth: "400px" }}
+          style={{
+            maxWidth: "400px",
+            margin: "0 auto",
+          }}
           // imgStyle={{ objectFit: "contain" }}
         />
         {console.log(post.frontmatter.cover.childImageSharp.small)}
