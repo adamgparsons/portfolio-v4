@@ -6,12 +6,14 @@ import Button from "./Button"
 import Img from "gatsby-image"
 
 const CardContainer = styled.div`
-  grid-column: span 7 / auto;
+  grid-column: span 5 / auto;
   border: 1px solid black;
   background-color: white;
+  min-height: 0; /* NEW */
+  min-width: 0;
 
   @media (min-width: ${theme.breakpoints[1]}) {
-    grid-column: span 3 / auto;
+    grid-column: span 2 / auto;
 
     ${({ order }) =>
       order === 1 &&
@@ -128,12 +130,11 @@ const ArticleCard = ({ post }) => {
         backgroundColor={post.frontmatter.themeColor}
       >
         <Img
-          fixed={
+          fluid={
             post.frontmatter.order === 1
               ? post.frontmatter.cover.childImageSharp.large
               : post.frontmatter.cover.childImageSharp.small
           }
-          style={{ margin: "0 auto" }}
         />
         {console.log(post.frontmatter.cover.childImageSharp.small)}
       </CardImageHolder>
