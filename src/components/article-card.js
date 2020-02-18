@@ -54,9 +54,6 @@ const CardContainer = styled.div`
 const CardImageHolder = styled.div`
   grid-column: 1/4;
   border-bottom: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   padding: 32px;
   height: 320px;
 
@@ -135,6 +132,8 @@ const ArticleCard = ({ post }) => {
               ? post.frontmatter.cover.childImageSharp.large
               : post.frontmatter.cover.childImageSharp.small
           }
+          style={{ maxWidth: "400px" }}
+          // imgStyle={{ objectFit: "contain" }}
         />
         {console.log(post.frontmatter.cover.childImageSharp.small)}
       </CardImageHolder>

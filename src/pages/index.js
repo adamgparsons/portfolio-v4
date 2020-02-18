@@ -35,10 +35,10 @@ export const pageQuery = graphql`
             cover {
               publicURL
               childImageSharp {
-                large: fluid {
+                large: fluid(maxWidth: 200) {
                   ...GatsbyImageSharpFluid
                 }
-                small: fluid {
+                small: fluid(maxWidth: 200) {
                   ...GatsbyImageSharpFluid
                 }
               }
