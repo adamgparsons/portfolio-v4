@@ -37,8 +37,13 @@ const Layout = ({ children, page }) => {
   const Main = styled.main`
     max-width: ${theme.breakpoints[2]};
     margin: 0 auto;
-    padding-left: ${theme.space[5]};
-    padding-right: ${theme.space[5]};
+    padding-left: ${theme.space[3]};
+    padding-right: ${theme.space[3]};
+
+    @media (min-width: 550px) {
+      padding-left: ${theme.space[5]};
+      padding-right: ${theme.space[5]};
+    }
   `
 
   return (

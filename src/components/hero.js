@@ -6,8 +6,8 @@ import underline from "../images/underline.svg"
 
 const Container = styled.div`
   max-width: 850px;
-  margin-top: ${theme.space[7]};
-  margin-bottom: ${theme.space[7]};
+  margin-top: ${theme.space[6]};
+  margin-bottom: 80px;
   animation: 0.5s ease 0s normal forwards 1 fadein;
   @keyframes fadein {
     0% {
@@ -20,17 +20,33 @@ const Container = styled.div`
       opacity: 1;
     }
   }
+
+  @media (min-width: 550px) {
+    margin-top: ${theme.space[7]};
+    margin-bottom: ${theme.space[7]};
+  }
 `
 
 const Hi = styled.h2`
-  ${theme.textStyles.heading1}
+  ${theme.textStyles.heading2}
   margin-bottom: ${theme.space[5]};
+
+  @media (min-width: 550px) {
+    ${theme.textStyles.heading1};
+    margin-bottom: ${theme.space[5]};
+  }
 `
 
 const Description = styled.p`
-  ${theme.textStyles.heading2}
+  ${theme.textStyles.heading3}
   font-weight: 400;
   color: ${theme.colors.grey800};
+
+  @media (min-width: 550px) {
+    ${theme.textStyles.heading2};
+    font-weight: 400;
+    color: ${theme.colors.grey800};
+  }
 `
 
 const SnookLink = styled(props => <Link {...props} />)`
@@ -50,17 +66,26 @@ const Name = styled.span`
   &::after {
     content: "";
     position: absolute;
-    width: 130px;
-    height: 130px;
+    width: 110px;
+    height: 110px;
     z-index: 0;
     background-image: url(${underline});
     background-repeat: no-repeat;
     background-size: cover;
     background-size: 130px 130px;
     left: 0px;
-    top: -7px;
+    top: -15px;
   }
-}
+
+  @media (min-width: 550px) {
+    &::after {
+      width: 130px;
+      height: 130px;
+      left: 0px;
+      top: -7px;
+      background-size: 130px 130px;
+    }
+  }
 `
 
 const Hero = () => (

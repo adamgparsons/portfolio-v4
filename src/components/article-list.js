@@ -35,10 +35,25 @@ const ListHeading = styled.h3`
     background-repeat: no-repeat;
     background-size: cover;
     background-size: 70px 70px;
-    right: -80px;
-    top: 11px;
+    right: -10px;
+    top: 40px;
     transform: rotate(9deg);
+    display: none;
+  }
+  @media (min-width: ${theme.breakpoints[1]}) {
+    &::after {
+      right: -80px;
+      top: 11px;
+      display: inline;
+    }
+  }
 
+  @media (min-width: ${theme.breakpoints[1]}) {
+    &::after {
+      right: -80px;
+      top: 11px;
+    }
+  }
 `
 const Grid = styled.div`
   display: grid;
