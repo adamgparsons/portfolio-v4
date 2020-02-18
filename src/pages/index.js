@@ -38,7 +38,7 @@ export const pageQuery = graphql`
                 large: fluid(maxWidth: 800) {
                   ...GatsbyImageSharpFluid
                 }
-                small: fluid(maxWidth: 200) {
+                small: fluid(maxWidth: 600) {
                   ...GatsbyImageSharpFluid
                 }
               }

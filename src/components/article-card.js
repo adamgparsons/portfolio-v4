@@ -59,12 +59,9 @@ const CardImageHolder = styled.div`
   /* display: flex;
   flex-direction: column; */
 
-  ${({ order }) => order === 1 && ` padding:0px`};
-  ${({ backgroundColor }) =>
-    `
-background-color: ${backgroundColor}
-
-  `};
+  ${({ backgroundColor }) => `
+background-color: ${backgroundColor};
+  `}
 
   @media (min-width: ${theme.breakpoints[1]}) {
     ${({ order }) =>
@@ -73,7 +70,7 @@ background-color: ${backgroundColor}
       flex-direction: row;
     border-bottom: none;
     border-right: 1px solid black;
-    padding: 32px
+    padding: 32px;
   `};
   }
 `
@@ -137,6 +134,8 @@ const ArticleCard = ({ post }) => {
           style={{
             maxWidth: "400px",
             margin: "0 auto",
+            top: "50%",
+            transform: "translateY(-50%)",
           }}
           // imgStyle={{ objectFit: "contain" }}
         />
