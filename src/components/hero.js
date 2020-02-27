@@ -49,6 +49,13 @@ const Description = styled.p`
   }
 `
 
+const SecondSentence = styled.span`
+  display: inline;
+  @media (min-width: ${theme.breakpoints[1]}) {
+    display: block;
+  }
+`
+
 const SnookLink = styled.a`
   color: ${theme.colors.grey700};
   text-decoration: none;
@@ -98,8 +105,10 @@ const Hero = () => (
       Hi I’m <Name>Adam</Name>
     </Hi>
     <Description>
-      I’m a UX Designer & Developer based in London.<br></br> I enjoy designing
-      and building interfaces that solve user problems.
+      I’m a UX Designer & Developer based in London.{" "}
+      <SecondSentence>
+        I enjoy designing and building interfaces that solve user problems.
+      </SecondSentence>
       <br></br>
       <br></br>
       Currently at <SnookLink to="https://wearesnook.com/">Snook</SnookLink>
