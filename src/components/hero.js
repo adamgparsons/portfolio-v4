@@ -110,7 +110,7 @@ const Hero = () => (
       </SecondSentence>
       <br></br>
       <br></br>
-      Currently at <SnookLink to="https://wearesnook.com/">Snook</SnookLink>
+      Currently at <SnookLink href="https://wearesnook.com/">Snook</SnookLink>
     </Description>
   </Container>
 )
