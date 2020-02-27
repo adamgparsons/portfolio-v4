@@ -98,6 +98,7 @@ const ArticleType = styled.p`
   text-transform:uppercase;
   font-weight: 700;
   color: ${theme.colors.grey600};
+  margin-bottom:${theme.space[1]};
 `
 
 const ArticleHeading = styled(props => <Link {...props} />)`

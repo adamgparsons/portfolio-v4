@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 import theme from "../theme"
 import underline from "../images/underline.svg"
@@ -22,7 +21,7 @@ const Container = styled.div`
   }
 
   @media (min-width: 550px) {
-    margin-top: ${theme.space[7]};
+    margin-top: ${theme.space[6]};
     margin-bottom: ${theme.space[7]};
   }
 `
