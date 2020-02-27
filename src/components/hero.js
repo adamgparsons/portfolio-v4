@@ -49,7 +49,7 @@ const Description = styled.p`
   }
 `
 
-const SnookLink = styled(props => <Link {...props} />)`
+const SnookLink = styled.a`
   color: ${theme.colors.grey700};
   text-decoration: none;
   padding-bottom: 0px;
@@ -58,6 +58,7 @@ const SnookLink = styled(props => <Link {...props} />)`
   :hover {
     color: #4e97d0;
     box-shadow: inset 0 -0.175em white, inset 0 -0.22em #4e97d0;
+    cursor: pointer;
   }
 `
 
@@ -97,8 +98,8 @@ const Hero = () => (
       Hi I’m <Name>Adam</Name>
     </Hi>
     <Description>
-      I’m a UX Designer & Developer based in London. I enjoy designing and
-      building interfaces that solve user problems.
+      I’m a UX Designer & Developer based in London.<br></br> I enjoy designing
+      and building interfaces that solve user problems.
       <br></br>
       <br></br>
       Currently at <SnookLink to="https://wearesnook.com/">Snook</SnookLink>

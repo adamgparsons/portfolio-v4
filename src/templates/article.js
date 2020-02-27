@@ -59,15 +59,25 @@ const MarkdownStyles = styled.div`
     margin-top: ${theme.space[5]};
     margin-bottom: ${theme.space[5]};
   }
-  .video {
-    margin: 0 auto;
-    display: block;
-    margin-top: ${theme.space[6]};
-  }
 
   pre {
     margin-top: 32px;
     margin-bottom: 32px;
+  }
+  .video {
+    margin-top: ${theme.space[6]};
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
   }
 `
 // import '../css/blog-post.css'; // make it pretty!
