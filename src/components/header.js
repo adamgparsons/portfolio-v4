@@ -42,7 +42,7 @@ const Container = styled.div`
 const Logo = styled(props => <Link {...props} />)`
   ${theme.textStyles.heading3};
   font-size: 18px;
-  color: ${theme.colors.grey600};
+  color: ${theme.colors.grey800};
   text-decoration: none;
   margin-bottom: 32px;
   transition: color 0.2s ease-in;
@@ -53,18 +53,18 @@ const Logo = styled(props => <Link {...props} />)`
   @media (min-width: 550px) {
     ${theme.textStyles.heading3}
     font-size: 24px;
-    color: ${theme.colors.grey600};
+    color: ${theme.colors.grey800};
   }
 `
 
 const ContactLink = styled.a`
   ${theme.textStyles.heading3}
   font-size: 18px;
-  color: ${theme.colors.grey600};
+  color: ${theme.colors.grey800};
   text-decoration: none;
   margin-top: 11px;
   margin-bottom: 0px;
-  border-bottom: 2px solid ${theme.colors.grey400};
+  border-bottom: 2px solid ${theme.colors.grey600};
   transition: color 0.2s ease-in, border-bottom 0.2s ease-in;
   :hover {
     color: #4e97d0;
@@ -74,7 +74,7 @@ const ContactLink = styled.a`
   @media (min-width: 550px) {
     ${theme.textStyles.heading3}
     font-size: 24px;
-    color: ${theme.colors.grey600};
+    color: ${theme.colors.grey800};
   }
 `
 
