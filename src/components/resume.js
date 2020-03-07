@@ -10,7 +10,7 @@ const Section = styled.section`
 
 const ResumeHeading = styled.h3`
   ${theme.textStyles.heading1}
-  margin-bottom: 50px;
+  margin-bottom: 70px;
   position: relative;
   display: inline-block;
 
@@ -156,17 +156,17 @@ const Resume = () => (
           <li>
             <H4>UX Designer </H4>
             <P>Citizens Advice</P>
-            <Date>August 2019 - Present</Date>
+            <Date>November 2017 - July 2019</Date>
           </li>
           <li>
             <H4>UX Designer</H4>
             <P>British Red Cross</P>
-            <Date>August 2019 - Present</Date>
+            <Date>June 2016 - November 2017</Date>
           </li>
           <li>
             <H4>UX Designer</H4>
             <P>Freelance</P>
-            <Date>August 2019 - Present</Date>
+            <Date>December 2015 - June 2016</Date>
           </li>
         </UL>
       </Experience>
@@ -213,7 +213,7 @@ const Resume = () => (
                 <P>React</P>
               </li>
               <li>
-                <P>Github</P>
+                <P>Git/Github</P>
               </li>
             </UL>
           </DevSkills>
@@ -240,25 +240,25 @@ const Resume = () => (
           <li>
             <H4>SuperHi</H4>
             <P>Ajax and APIS</P>
-            <Date>August 2019 – December 2019</Date>
+            <Date>January 2020 - February 2020</Date>
           </li>
 
           <li>
             <H4>Frontend Masters</H4>
             <P>Intermediate React</P>
-            <Date>August 2019 – December 2019</Date>
+            <Date>June 2019 – August 2019</Date>
           </li>
 
           <li>
             <H4>SuperHi</H4>
             <P>React.js</P>
-            <Date>August 2019 – December 2019</Date>
+            <Date>February 2019 – March 2019</Date>
           </li>
 
           <li>
-            <H4>Superhi</H4>
+            <H4>SuperHi</H4>
             <P>Advanced CSS and Javascript</P>
-            <Date>August 2019 – December 2019</Date>
+            <Date>September 2018 – November 2018</Date>
           </li>
         </UL>
       </EduCourses>
