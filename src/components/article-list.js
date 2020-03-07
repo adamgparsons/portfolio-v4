@@ -4,7 +4,8 @@ import theme from "../theme"
 import ArticleCard from "../components/article-card"
 import squiggle from "../images/squiggle.svg"
 
-const Container = styled.div`
+const Container = styled.section`
+  margin-bottom: 120px;
   animation: 1s ease 0s normal forwards 1 fadein;
   @keyframes fadein {
     0% {
@@ -19,8 +20,8 @@ const Container = styled.div`
   }
 `
 
-const ListHeading = styled.h3`
-  ${theme.textStyles.heading2}
+const ListHeading = styled.h2`
+  ${theme.textStyles.heading1}
   margin-bottom: 50px;
   position: relative;
   display: inline-block;
