@@ -81,18 +81,7 @@ const ArticleList = ({ data }) => {
         {posts
           .filter(post => post.node.frontmatter.title.length > 0)
           .map(({ node: post }) => {
-            return (
-              <ArticleCard post={post} />
-
-              /* <div className="blog-post-preview" key={post.id}>
-              <h1>
-                <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-              </h1>
-              <h2>{post.frontmatter.intro}</h2>
-              <p>{post.excerpt}</p>
-              <img src={post.frontmatter.cover.publicURL} />
-            </div> */
-            )
+            return <ArticleCard key={post.id} post={post} />
           })}
       </Grid>
     </Container>

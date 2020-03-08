@@ -11,7 +11,12 @@ import Footer from "../components/footer"
 export default function Index({ data }) {
   return (
     <Layout page="home">
-      <Helmet title="Adam Parsons" />
+      <Helmet title="Adam Parsons">
+        <meta
+          name="description"
+          content="Adam Parsons, UX Designer and Developer based in London"
+        />
+      </Helmet>
       <Hero />
       <ArticleList data={data}></ArticleList>
       <Resume />

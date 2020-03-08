@@ -150,7 +150,6 @@ const ArticleCard = ({ post }) => {
           }
           // imgStyle={{ objectFit: "contain" }}
         />
-        {console.log(post.frontmatter.cover.childImageSharp.small)}
       </CardImageHolder>
       <CardDescription order={post.frontmatter.order}>
         <ArticleType>{post.frontmatter.type}</ArticleType>
@@ -166,7 +165,6 @@ const ArticleCard = ({ post }) => {
         >
           Read more
         </Button>
-        {console.log(post)}
       </CardDescription>
     </CardContainer>
   )

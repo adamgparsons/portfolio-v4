@@ -3,6 +3,7 @@ import styled from "styled-components"
 import theme from "../theme"
 import squiggle from "../images/squiggle-2.svg"
 import Button from "../components/Button"
+import resumePDF from "../images/Adam_Parsons_CV.pdf"
 
 const Section = styled.section`
   margin-top: ${theme.space[6]};
@@ -263,8 +264,9 @@ const Resume = () => (
         </UL>
       </EduCourses>
     </ResumeContent>
-    {/* need to add pdf link to button */}
-    {/* <Button themeColor="#FFE885">Download résumé</Button> */}
+    <Button themeColor="#FFE885" href={resumePDF}>
+      Download résumé
+    </Button>
   </Section>
 )
 
