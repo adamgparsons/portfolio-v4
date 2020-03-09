@@ -98,6 +98,7 @@ const ArticleType = styled.p`
   text-transform:uppercase;
   font-weight: 700;
   color: ${theme.colors.grey600};
+  margin-bottom:${theme.space[1]};
 `
 
 const ArticleHeading = styled(props => <Link {...props} />)`
@@ -131,15 +132,24 @@ const ArticleCard = ({ post }) => {
               ? post.frontmatter.cover.childImageSharp.large
               : post.frontmatter.cover.childImageSharp.small
           }
-          style={{
-            maxWidth: "400px",
-            margin: "0 auto",
-            top: "50%",
-            transform: "translateY(-50%)",
-          }}
+          // the 3rd post has a vertical image rather than a horizontal one
+          style={
+            post.frontmatter.order === 3
+              ? {
+                  maxWidth: "340px",
+                  margin: "0 auto",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                }
+              : {
+                  maxWidth: "400px",
+                  margin: "0 auto",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                }
+          }
           // imgStyle={{ objectFit: "contain" }}
         />
-        {console.log(post.frontmatter.cover.childImageSharp.small)}
       </CardImageHolder>
       <CardDescription order={post.frontmatter.order}>
         <ArticleType>{post.frontmatter.type}</ArticleType>
@@ -155,7 +165,6 @@ const ArticleCard = ({ post }) => {
         >
           Read more
         </Button>
-        {console.log(post)}
       </CardDescription>
     </CardContainer>
   )

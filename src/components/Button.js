@@ -12,8 +12,7 @@ const ButtonHolder = styled.div`
   margin-bottom: ${theme.space[3]};
 `
 
-const ButtonLink = styled(props => <Link {...props} />)`
-  ${theme.textStyles.body};
+const ButtonStyling = `
   display: block;
   color: ${theme.colors.grey800};
   position: relative;
@@ -27,6 +26,16 @@ const ButtonLink = styled(props => <Link {...props} />)`
   :hover {
     transform: translate(6px, 6px);
   }
+`
+
+const InternalLink = styled(props => <Link {...props} />)`
+  ${theme.textStyles.body};
+  ${ButtonStyling}
+`
+
+const ExternalLink = styled.a`
+  ${theme.textStyles.body};
+  ${ButtonStyling}
 `
 
 const Shadow = styled.span`
@@ -45,17 +54,17 @@ const Shadow = styled.span`
 background-color: ${color}
 
   `};
-
-  /* box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; */
 `
 
-const Button = ({ to, children, themeColor }) => {
-  // console.log(themeColor)
-
+const Button = ({ to, children, themeColor, href }) => {
   return (
     <>
       <ButtonHolder>
-        <ButtonLink to={to}>{children}</ButtonLink>
+        {to ? (
+          <InternalLink to={to}>{children}</InternalLink>
+        ) : (
+          <ExternalLink href={href}>{children}</ExternalLink>
+        )}
         <Shadow color={themeColor} />
       </ButtonHolder>
     </>

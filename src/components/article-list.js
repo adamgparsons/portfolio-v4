@@ -4,7 +4,8 @@ import theme from "../theme"
 import ArticleCard from "../components/article-card"
 import squiggle from "../images/squiggle.svg"
 
-const Container = styled.div`
+const Container = styled.section`
+  margin-bottom: 120px;
   animation: 1s ease 0s normal forwards 1 fadein;
   @keyframes fadein {
     0% {
@@ -19,8 +20,8 @@ const Container = styled.div`
   }
 `
 
-const ListHeading = styled.h3`
-  ${theme.textStyles.heading2}
+const ListHeading = styled.h2`
+  ${theme.textStyles.heading1}
   margin-bottom: 50px;
   position: relative;
   display: inline-block;
@@ -58,7 +59,12 @@ const ListHeading = styled.h3`
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 24px 1fr 24px 1fr;
-  grid-row-gap: 24px;
+
+  grid-row-gap: 48px;
+
+  @media (min-width: ${theme.breakpoints[1]}) {
+    grid-row-gap: 24px;
+  }
 
   @media (min-width: 980px) {
     grid-template-columns: 1fr 36px 1fr 36px 1fr;
@@ -75,18 +81,7 @@ const ArticleList = ({ data }) => {
         {posts
           .filter(post => post.node.frontmatter.title.length > 0)
           .map(({ node: post }) => {
-            return (
-              <ArticleCard post={post} />
-
-              /* <div className="blog-post-preview" key={post.id}>
-              <h1>
-                <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-              </h1>
-              <h2>{post.frontmatter.intro}</h2>
-              <p>{post.excerpt}</p>
-              <img src={post.frontmatter.cover.publicURL} />
-            </div> */
-            )
+            return <ArticleCard key={post.id} post={post} />
           })}
       </Grid>
     </Container>
