@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Resume from "../components/resume"
 import ArticleList from "../components/article-list"
+import Contact from "../components/contact"
 import Footer from "../components/footer"
 
 // import '../css/index.css'; // add some style if you want!
@@ -20,6 +21,7 @@ export default function Index({ data }) {
       <Hero />
       <ArticleList data={data}></ArticleList>
       <Resume />
+      <Contact />
       <Footer />
     </Layout>
   )

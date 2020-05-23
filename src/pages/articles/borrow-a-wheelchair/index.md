@@ -2,7 +2,7 @@
 path: "/borrow-a-wheelchair"
 title: "British Red Cross Wheelchair Service"
 intro: "Redesigning how the Red Cross lends wheelchairs"
-order: 4
+order: 6
 cover: "./british-red-cross.png"
 type: "case study"
 themeColor: "#E86F68"
