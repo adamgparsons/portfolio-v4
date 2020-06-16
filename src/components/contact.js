@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import TextInput from "./TextInput"
 import TextArea from "./TextArea"
@@ -35,29 +35,90 @@ const TagLine = styled.p`
   max-width: 600px;
 `
 
-const Contact = () => (
-  <section>
-    <Container>
-      <ContactHeading>Contact</ContactHeading>
-      <ContactContent>
-        <TagLine>
-          Have a project I might be interested in or just want to say hi? Get in
-          touch{" "}
-        </TagLine>
-        <ContactForm
-          name="contact"
-          method="post"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-        >
-          <TextInput name="name" labelText="Name" />
-          <TextInput name="email" labelText="Email" type="email" />
-          <TextArea name="message" labelText="Message" />
-          <Button themeColor={theme.colors.brandBlue}>Send email</Button>
-        </ContactForm>
-      </ContactContent>
-    </Container>
-  </section>
-)
+const Contact = () => {
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    message: "",
+  })
+  const [showSentMessage, setShowSentMessage] = useState(false)
+
+  const handleSubmit = e => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...formState }),
+    })
+      .then(() => setShowSentMessage(true))
+      .catch(error => alert(error))
+
+    e.preventDefault()
+  }
+
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
+
+  const handleChange = e => {
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value,
+    })
+  }
+  return (
+    <section>
+      <Container>
+        <ContactHeading>Contact</ContactHeading>
+        <ContactContent>
+          {!showSentMessage ? (
+            <>
+              <TagLine>
+                Have a project I might be interested in or just want to say hi?
+                Get in touch{" "}
+              </TagLine>
+              <ContactForm
+                name="contact"
+                method="post"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                onSubmit={handleSubmit}
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <TextInput
+                  name="name"
+                  labelText="Name"
+                  value={formState.name}
+                  onChange={handleChange}
+                />
+                <TextInput
+                  name="email"
+                  labelText="Email"
+                  type="email"
+                  value={formState.email}
+                  onChange={handleChange}
+                />
+                <TextArea
+                  name="message"
+                  labelText="Message"
+                  value={formState.message}
+                  onChange={handleChange}
+                />
+                <Button themeColor={theme.colors.brandBlue} type="submit">
+                  Send email
+                </Button>
+              </ContactForm>{" "}
+            </>
+          ) : (
+            <TagLine>
+              Thanks for the message. I will get back to you soon.
+            </TagLine>
+          )}
+        </ContactContent>
+      </Container>
+    </section>
+  )
+}
 
 export default Contact

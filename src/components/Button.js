@@ -34,7 +34,7 @@ const InternalLink = styled(props => <Link {...props} />)`
   ${ButtonStyling}
 `
 
-const ExternalLink = styled.a`
+const ExternalLink = styled.button`
   ${theme.textStyles.body};
   ${ButtonStyling}
 `
@@ -57,14 +57,18 @@ background-color: ${color}
   `};
 `
 
-const Button = ({ to, children, themeColor, href }) => {
+const Button = ({ to, children, type, themeColor, href }) => {
   return (
     <>
       <ButtonHolder>
         {to ? (
-          <InternalLink to={to}>{children}</InternalLink>
+          <InternalLink to={to} type={type}>
+            {children}
+          </InternalLink>
         ) : (
-          <ExternalLink href={href}>{children}</ExternalLink>
+          <ExternalLink href={href} type={type}>
+            {children}
+          </ExternalLink>
         )}
         <Shadow color={themeColor} />
       </ButtonHolder>

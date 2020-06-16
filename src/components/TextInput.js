@@ -26,11 +26,17 @@ const Input = styled.input`
   }
 `
 
-const TextInput = ({ name, labelText, type }) => {
+const TextInput = ({ name, labelText, type, value, onChange }) => {
   return (
     <>
-      <Label for={name}>{labelText}</Label>
-      <Input type={!type ? "text" : type} id={name} name={name}></Input>
+      <Label htmlFor={name}>{labelText}</Label>
+      <Input
+        type={!type ? "text" : type}
+        id={name}
+        name={name}
+        value={value}
+        onChange={onChange}
+      ></Input>
     </>
   )
 }

@@ -27,11 +27,16 @@ const TextArea = styled.textarea`
   }
 `
 
-const TextInput = ({ name, labelText }) => {
+const TextInput = ({ name, labelText, value, onChange }) => {
   return (
     <>
-      <Label for={name}>{labelText}</Label>
-      <TextArea id={name} name={name}></TextArea>
+      <Label htmlFor={name}>{labelText}</Label>
+      <TextArea
+        id={name}
+        name={name}
+        value={value}
+        onChange={onChange}
+      ></TextArea>
     </>
   )
 }
