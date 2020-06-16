@@ -31,6 +31,8 @@ const TagLine = styled.p`
   ${theme.textStyles.heading3};
   color: ${theme.colors.grey700};
   font-weight: 400;
+  line-height: 1.5;
+  max-width: 600px;
 `
 
 const Contact = () => (
