@@ -40,6 +40,18 @@ const CardContainer = styled.div`
       `
     grid-column: 5/6;
   `};
+
+    ${({ order }) =>
+      order === 5 &&
+      `
+grid-column: 1/2;
+`};
+
+    ${({ order }) =>
+      order === 6 &&
+      `
+grid-column: 3/4;
+`};
   }
 
   @media (min-width: 980px) {
@@ -134,7 +146,7 @@ const ArticleCard = ({ post }) => {
           }
           // the 3rd post has a vertical image rather than a horizontal one
           style={
-            post.frontmatter.order === 3
+            post.frontmatter.order === 4
               ? {
                   maxWidth: "340px",
                   margin: "0 auto",

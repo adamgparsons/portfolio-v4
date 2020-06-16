@@ -2,7 +2,7 @@
 path: "/intro-to-functional-programming"
 title: "Intro to Functional Programming in JS"
 intro: "Writing more efficient functions with functional programming"
-order: 2
+order: 5
 cover: "./functional-code-snippet.png"
 type: "learning notes"
 themeColor: "#FFE885"

@@ -25,6 +25,7 @@ const ButtonStyling = `
 
   :hover {
     transform: translate(6px, 6px);
+    cursor: pointer;
   }
 `
 
