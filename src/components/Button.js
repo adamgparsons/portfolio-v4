@@ -38,6 +38,10 @@ const ExternalLink = styled.a`
   ${theme.textStyles.body};
   ${ButtonStyling}
 `
+const FormButton = styled.button`
+  ${theme.textStyles.body};
+  ${ButtonStyling}
+`
 
 const Shadow = styled.span`
   /* background-color: #ecb7b7; */
@@ -57,23 +61,36 @@ background-color: ${color}
   `};
 `
 
-const Button = ({ to, children, type, themeColor, href }) => {
-  return (
-    <>
+const Button = ({ to, children, themeColor, href, isForm }) => {
+  // if button is an internal link
+  if (to) {
+    return (
       <ButtonHolder>
-        {to ? (
-          <InternalLink to={to} type={type}>
-            {children}
-          </InternalLink>
-        ) : (
-          <ExternalLink href={href} type={type}>
-            {children}
-          </ExternalLink>
-        )}
+        <InternalLink to={to}>{children}</InternalLink>
         <Shadow color={themeColor} />
       </ButtonHolder>
-    </>
-  )
+    )
+  }
+
+  // if button is a form button
+  if (isForm) {
+    return (
+      <ButtonHolder>
+        <FormButton href={href}>{children}</FormButton>
+        <Shadow color={themeColor} />
+      </ButtonHolder>
+    )
+  }
+
+  //if anything else use as <a>
+  else {
+    return (
+      <ButtonHolder>
+        <ExternalLink href={href}>{children}</ExternalLink>
+        <Shadow color={themeColor} />
+      </ButtonHolder>
+    )
+  }
 }
 
 export default Button

@@ -57,7 +57,7 @@ const Logo = styled(props => <Link {...props} />)`
   }
 `
 
-const ContactLink = styled.a`
+const ContactLink = styled(props => <Link {...props} />)`
   ${theme.textStyles.heading3}
   font-size: 18px;
   color: ${theme.colors.grey800};
@@ -84,7 +84,7 @@ const Header = ({ siteTitle }) => (
       <h1 style={{ margin: 0 }}>
         <Logo to="/">Adam Parsons</Logo>
       </h1>
-      <ContactLink href="mailto:adam@adamparsons.me">Get in touch</ContactLink>
+      <ContactLink to="/#contact">Get in touch</ContactLink>
     </Container>
   </header>
 )

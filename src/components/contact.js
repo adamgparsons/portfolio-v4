@@ -15,7 +15,6 @@ const Container = styled.div`
 const ContactContent = styled.div``
 
 const ContactForm = styled.form`
-  width: 50%;
   display: flex;
   flex-direction: column;
 `
@@ -69,7 +68,7 @@ const Contact = () => {
   }
   return (
     <section>
-      <Container>
+      <Container id="contact">
         <ContactHeading>Contact</ContactHeading>
         <ContactContent>
           {!showSentMessage ? (
@@ -105,10 +104,14 @@ const Contact = () => {
                   value={formState.message}
                   onChange={handleChange}
                 />
-                <Button themeColor={theme.colors.brandBlue} type="submit">
+                <Button
+                  themeColor={theme.colors.brandBlue}
+                  type="submit"
+                  isForm
+                >
                   Send email
                 </Button>
-              </ContactForm>{" "}
+              </ContactForm>
             </>
           ) : (
             <TagLine>
