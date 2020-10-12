@@ -34,7 +34,7 @@ const InternalLink = styled(props => <Link {...props} />)`
   ${ButtonStyling}
 `
 
-const ExternalLink = styled.button`
+const ExternalLink = styled.a`
   ${theme.textStyles.body};
   ${ButtonStyling}
 `
