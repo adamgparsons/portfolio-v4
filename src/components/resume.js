@@ -150,7 +150,7 @@ const Resume = () => (
         <H3>Work experience</H3>
         <UL>
           <li>
-            <H4>Interaction Designer</H4>
+            <H4>Interaction Designer/Developer</H4>
             <P>Snook</P>
             <Date>August 2019 - Present</Date>
           </li>
@@ -240,7 +240,7 @@ const Resume = () => (
         <UL>
           <li>
             <H4>SuperHi</H4>
-            <P>Ajax and APIS</P>
+            <P>Ajax and APIs</P>
             <Date>January 2020 - February 2020</Date>
           </li>
 

@@ -104,13 +104,14 @@ const Hero = () => (
       Hi I’m <Name>Adam</Name>
     </Hi>
     <Description>
-      I’m a UX Designer & Developer based in London.{" "}
+      I’m a Frontend Developer based in London.
       <SecondSentence>
         I enjoy designing and building interfaces that solve user problems.
       </SecondSentence>
       <br></br>
       <br></br>
-      Currently at <SnookLink href="https://wearesnook.com/">Snook</SnookLink>
+      Currently working at {""}
+      <SnookLink href="https://wearesnook.com/">Snook</SnookLink>
     </Description>
   </Container>
 )

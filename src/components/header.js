@@ -3,10 +3,10 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 import theme from "../theme"
+import GithubLink from "./Githublink"
 
 const Container = styled.div`
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-between;
   align-items: left;
   max-width: ${theme.breakpoints[2]};
@@ -57,34 +57,13 @@ const Logo = styled(props => <Link {...props} />)`
   }
 `
 
-const ContactLink = styled(props => <Link {...props} />)`
-  ${theme.textStyles.heading3}
-  font-size: 18px;
-  color: ${theme.colors.grey800};
-  text-decoration: none;
-  margin-top: 11px;
-  margin-bottom: 0px;
-  border-bottom: 2px solid ${theme.colors.grey600};
-  transition: color 0.2s ease-in, border-bottom 0.2s ease-in;
-  :hover {
-    color: #4e97d0;
-    border-bottom: 2px solid #4e97d0;
-  }
-
-  @media (min-width: 550px) {
-    ${theme.textStyles.heading3}
-    font-size: 24px;
-    color: ${theme.colors.grey800};
-  }
-`
-
 const Header = ({ siteTitle }) => (
   <header>
     <Container>
       <h1 style={{ margin: 0 }}>
         <Logo to="/">Adam Parsons</Logo>
       </h1>
-      <ContactLink to="/#contact">Get in touch</ContactLink>
+      <GithubLink />
     </Container>
   </header>
 )
