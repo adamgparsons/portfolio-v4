@@ -76,6 +76,7 @@ const theme = {
     grey900: "#1A202C",
     white0125: "rgba(255,255,255,.0125)",
     brandBlue: "#4E97D0",
+    validationRed: "#E53E3E",
   },
 }
 

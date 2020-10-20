@@ -34,24 +34,65 @@ const TagLine = styled.p`
   max-width: 600px;
 `
 
+const ErrorMessage = styled.p`
+  ${theme.textStyles.body};
+  color: ${theme.colors.validationRed};
+`
+
+const initialState = {
+  name: "",
+  nameError: "",
+  email: "",
+  emailError: "",
+  message: "",
+  messageError: "",
+}
 const Contact = () => {
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    message: "",
-  })
+  const [formState, setFormState] = useState(initialState)
+
+  const validate = () => {
+    let nameError = ""
+    let emailError = ""
+    let messageError = ""
+
+    if (!formState.name) {
+      nameError = "Please enter your name"
+    }
+    if (!formState.email.includes("@")) {
+      emailError = "Please enter a valid email"
+    }
+
+    if (!formState.message) {
+      messageError = "Please enter a message"
+    }
+
+    if (nameError || emailError || messageError) {
+      setFormState({
+        ...formState,
+        nameError,
+        emailError,
+        messageError,
+      })
+      return false
+    }
+    return true
+  }
+
   const [showSentMessage, setShowSentMessage] = useState(false)
 
   const handleSubmit = e => {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...formState }),
-    })
-      .then(() => setShowSentMessage(true))
-      .catch(error => alert(error))
-
     e.preventDefault()
+    const isValid = validate()
+    if (isValid) {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...formState }),
+      })
+        .then(() => setShowSentMessage(true))
+        .catch(error => alert(error))
+      setFormState(initialState)
+    }
   }
 
   const encode = data => {
@@ -90,20 +131,26 @@ const Contact = () => {
                   labelText="Name"
                   value={formState.name}
                   onChange={handleChange}
+                  isError={formState.nameError}
                 />
+                <ErrorMessage>{formState.nameError}</ErrorMessage>
                 <TextInput
                   name="email"
                   labelText="Email"
                   type="email"
                   value={formState.email}
                   onChange={handleChange}
+                  isError={formState.emailError}
                 />
+                <ErrorMessage>{formState.emailError}</ErrorMessage>
                 <TextArea
                   name="message"
                   labelText="Message"
                   value={formState.message}
                   onChange={handleChange}
+                  isError={formState.messageError}
                 />
+                <ErrorMessage>{formState.messageError}</ErrorMessage>
                 <Button
                   themeColor={theme.colors.brandBlue}
                   type="submit"
