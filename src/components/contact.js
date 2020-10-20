@@ -58,6 +58,7 @@ const Contact = () => {
     if (!formState.name) {
       nameError = "Please enter your name"
     }
+
     if (!formState.email.includes("@")) {
       emailError = "Please enter a valid email"
     }
