@@ -6,6 +6,7 @@ import Resume from "../components/resume"
 import ArticleList from "../components/article-list"
 import Contact from "../components/contact"
 import Footer from "../components/footer"
+import { graphql } from "gatsby"
 
 // import '../css/index.css'; // add some style if you want!
 
