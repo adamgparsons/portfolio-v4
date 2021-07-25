@@ -6,7 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",
-    "gatsby": "^2.19.7",
+    "gatsby": "^3.10.1",
     "gatsby-image": "^2.2.40",
     "gatsby-plugin-catch-links": "^2.1.25",
     "gatsby-plugin-manifest": "^2.12.1",
@@ -18,7 +18,7 @@
     "gatsby-remark-copy-images": "^0.2.1",
     "gatsby-remark-images": "^3.1.44",
     "gatsby-source-filesystem": "^2.1.46",
-    "gatsby-transformer-remark": "^2.6.50",
+    "gatsby-transformer-remark": "^4.7.0",
     "gatsby-transformer-sharp": "^2.12.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
@@ -38,7 +38,7 @@
     "develop": "gatsby develop",
     "dev-m": "gatsby develop -H 0.0.0.0 -p 8000",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
+    "start": "yarn develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
