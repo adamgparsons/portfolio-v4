@@ -6,6 +6,7 @@ order: 1
 cover: "./citizens-advice.png"
 type: "case study"
 themeColor: "#4E97D0"
+date: "19.04.19"
 ---
 
 # Citizens Advice design system

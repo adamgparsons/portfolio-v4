@@ -6,6 +6,7 @@ order: 4
 cover: "./shibshib.png"
 type: "personal project"
 themeColor: "#F3D7DA"
+date: "14.11.19"
 ---
 
 # Shibagram

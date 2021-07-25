@@ -16,7 +16,7 @@ export default function Index({ data }) {
       <Helmet title="Adam Parsons">
         <meta
           name="description"
-          content="Adam Parsons, UX Designer and Developer based in London"
+          content="Adam Parsons, developer based in London"
         />
       </Helmet>
       <Hero />
@@ -42,6 +42,7 @@ export const pageQuery = graphql`
             intro
             path
             themeColor
+            date
             cover {
               publicURL
               childImageSharp {

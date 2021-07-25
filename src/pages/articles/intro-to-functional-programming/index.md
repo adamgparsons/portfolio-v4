@@ -6,6 +6,7 @@ order: 5
 cover: "./functional-code-snippet.png"
 type: "learning notes"
 themeColor: "#FFE885"
+date: "18.07.19"
 ---
 
 # Intro to Functional Programming in Javascript

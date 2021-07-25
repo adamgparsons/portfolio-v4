@@ -164,7 +164,9 @@ const ArticleCard = ({ post }) => {
         />
       </CardImageHolder>
       <CardDescription order={post.frontmatter.order}>
-        <ArticleType>{post.frontmatter.type}</ArticleType>
+        <ArticleType>
+          {post.frontmatter.date} {"  |  "} {post.frontmatter.type}
+        </ArticleType>
         <ArticleHeading to={post.frontmatter.path}>
           {post.frontmatter.title}
         </ArticleHeading>

@@ -6,6 +6,7 @@ order: 2
 cover: "./bad-advice-logo.png"
 type: "personal project"
 themeColor: "#78E2BE"
+date: "18.05.20"
 ---
 
 # BadAdvice

@@ -6,6 +6,7 @@ order: 3
 cover: "./reduce-code-snippet.png"
 type: "learning notes"
 themeColor: "#FFE885"
+date: "20.01.20"
 ---
 
 # Understanding reduce in Javascript

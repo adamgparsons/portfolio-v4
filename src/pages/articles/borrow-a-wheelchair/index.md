@@ -6,6 +6,7 @@ order: 6
 cover: "./british-red-cross.png"
 type: "case study"
 themeColor: "#E86F68"
+date: "01.11.17"
 ---
 
 # Borrow a wheelchair
