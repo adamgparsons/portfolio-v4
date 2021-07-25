@@ -5,6 +5,14 @@ import Layout from "../components/layout"
 import styled from "styled-components"
 import theme from "../theme"
 
+const PostDate = styled.p`
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  font-size: 20px;
+  margin-bottom: 0px;
+`
+
 const MarkdownStyles = styled.div`
   margin-bottom: ${theme.space[7]}px;
   margin-left: auto;
@@ -13,7 +21,7 @@ const MarkdownStyles = styled.div`
   div {
     h1 {
       ${theme.textStyles.heading1};
-      margin-top: ${theme.space[6]};
+      margin-top: ${theme.space[2]};
       margin-bottom: ${theme.space[5]};
     }
   }
@@ -89,6 +97,7 @@ export default function Template({
   const { markdownRemark: post } = data // data.markdownRemark holds your post data
   return (
     <Layout>
+      <PostDate>{post.frontmatter.date}</PostDate>
       <div className="blog-post-container">
         <Helmet title={`${post.frontmatter.title}`} />
         <MarkdownStyles>
@@ -109,6 +118,7 @@ export const pageQuery = graphql`
       frontmatter {
         path
         title
+        date
         cover {
           publicURL
           childImageSharp {
