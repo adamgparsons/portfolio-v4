@@ -126,10 +126,17 @@ const UL = styled.ul`
   list-style-type: none;
   margin-left: 0px;
   margin-bottom: ${theme.space[6]};
+`
 
-  li {
-    margin-bottom: ${theme.space[6]};
-  }
+const Li = styled.li`
+  margin-bottom: ${theme.space[6]};
+`
+
+const SkillsList = styled.ul`
+  list-style-type: none;
+  margin-left: 0px;
+  margin-bottom: ${theme.space[6]};
+  column-count: 2;
 `
 const P = styled.p`
   ${theme.textStyles.body};
@@ -149,118 +156,107 @@ const Resume = () => (
       <Experience>
         <H3>Work experience</H3>
         <UL>
-          <li>
+          <Li>
             <H4>Developer</H4>
             <P>Snook</P>
             <Date>August 2019 - Present</Date>
-          </li>
-          <li>
+          </Li>
+          <Li>
             <H4>UX Designer </H4>
             <P>Citizens Advice</P>
             <Date>November 2017 - July 2019</Date>
-          </li>
-          <li>
+          </Li>
+          <Li>
             <H4>UX Designer</H4>
             <P>British Red Cross</P>
             <Date>June 2016 - November 2017</Date>
-          </li>
-          <li>
+          </Li>
+          <Li>
             <H4>UX Designer</H4>
             <P>Freelance</P>
             <Date>December 2015 - June 2016</Date>
-          </li>
+          </Li>
         </UL>
       </Experience>
       <Skills>
         <H3>Skills</H3>
         <SkillsContainer>
-          <DesignSkills>
-            <H4>
-              Design <span aria-hidden="true">🖌</span>
-            </H4>
-            <UL>
-              <li>
-                <P>Product Design</P>
-              </li>
-              <li>
-                <P>UI/UX Design</P>
-              </li>
-              <li>
-                <P>Visual Design</P>
-              </li>
-              <li>
-                <P>Wireframing</P>
-              </li>
-              <li>
-                <P>Prototyping</P>
-              </li>
-            </UL>
-          </DesignSkills>
-          <DevSkills>
-            <H4>
-              Development <span aria-hidden="true">👨‍💻</span>
-            </H4>
-            <UL>
-              <li>
-                <P>HTML5/CSS</P>
-              </li>
-              <li>
-                <P>SASS/Less</P>
-              </li>
-              <li>
-                <P>Javascript</P>
-              </li>
-              <li>
-                <P>React</P>
-              </li>
-              <li>
-                <P>Git/Github</P>
-              </li>
-            </UL>
-          </DevSkills>
+          <SkillsList>
+            <Li>
+              <P>HTML5/CSS</P>
+            </Li>
+            <Li>
+              <P>SASS/Less</P>
+            </Li>
+            <Li>
+              <P>Javascript/React</P>
+            </Li>
+            <Li>
+              <P>UI Design</P>
+            </Li>
+            <Li>
+              <P>Accessibility testing</P>
+            </Li>
+
+            <Li>
+              <P>Node/Express</P>
+            </Li>
+            <Li>
+              <P>Python/Django</P>
+            </Li>
+            <Li>
+              <P>Mongodb/Postgres</P>
+            </Li>
+            <Li>
+              <P>Unit & E2E testing</P>
+            </Li>
+            <Li>
+              <P>Git/Github</P>
+            </Li>
+          </SkillsList>
         </SkillsContainer>
       </Skills>
 
       <EduCourses>
         <H3>Education</H3>
         <UL>
-          <li>
+          <Li>
             <H4>General Assembly</H4>
             <P>User Experience Design</P>
             <Date>2015</Date>
-          </li>
+          </Li>
 
-          <li>
+          <Li>
             <H4>SAE Institute Sydney</H4>
             <P>Multimedia diploma</P>
             <Date>2006-2008</Date>
-          </li>
+          </Li>
         </UL>
         <H3>Online Courses</H3>
         <UL>
-          <li>
+          <Li>
             <H4>SuperHi</H4>
             <P>Ajax and APIs</P>
             <Date>January 2020 - February 2020</Date>
-          </li>
+          </Li>
 
-          <li>
+          <Li>
             <H4>Frontend Masters</H4>
             <P>Intermediate React</P>
             <Date>June 2019 – August 2019</Date>
-          </li>
+          </Li>
 
-          <li>
+          <Li>
             <H4>SuperHi</H4>
             <P>React.js</P>
             <Date>February 2019 – March 2019</Date>
-          </li>
+          </Li>
 
-          <li>
+          <Li>
             <H4>SuperHi</H4>
             <P>Advanced CSS and Javascript</P>
             <Date>September 2018 – November 2018</Date>
-          </li>
+          </Li>
         </UL>
       </EduCourses>
     </ResumeContent>
