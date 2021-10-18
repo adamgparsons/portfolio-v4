@@ -55,7 +55,7 @@ const SecondSentence = styled.span`
   }
 `
 
-const SnookLink = styled.a`
+const WorkLink = styled.a`
   color: ${theme.colors.grey700};
   text-decoration: none;
   padding-bottom: 0px;
@@ -110,8 +110,8 @@ const Hero = () => (
       </SecondSentence>
       <br></br>
       <br></br>
-      Currently working at {""}
-      <SnookLink href="https://wearesnook.com/">Snook</SnookLink>
+      Currently at {""}
+      <WorkLink href="https://www.wayhome.co.uk/">Wayhome</WorkLink>
     </Description>
   </Container>
 )
