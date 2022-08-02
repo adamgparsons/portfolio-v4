@@ -8,8 +8,6 @@ import Contact from "../components/contact"
 import Footer from "../components/footer"
 import { graphql } from "gatsby"
 
-// import '../css/index.css'; // add some style if you want!
-
 export default function Index({ data }) {
   return (
     <Layout page="home">
