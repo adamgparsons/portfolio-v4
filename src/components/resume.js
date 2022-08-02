@@ -59,6 +59,9 @@ const ResumeContent = styled.div`
 `
 const Experience = styled.div`
   grid-area: experience;
+  @media (min-width: 850px) {
+    margin-bottom: ${theme.space[6]};
+  }
 `
 
 const Skills = styled.div`
@@ -91,12 +94,6 @@ const SkillsContainer = styled.div`
   }
 `
 
-const DesignSkills = styled.div`
-  grid-area: design;
-`
-const DevSkills = styled.div`
-  grid-area: development;
-`
 const EduCourses = styled.div`
   grid-area: education;
 
@@ -157,9 +154,14 @@ const Resume = () => (
         <H3>Work experience</H3>
         <UL>
           <Li>
+            <H4>Frontend Developer</H4>
+            <P>Wayhome</P>
+            <Date>August 2021 - Present</Date>
+          </Li>
+          <Li>
             <H4>Developer</H4>
             <P>Snook</P>
-            <Date>August 2019 - Present</Date>
+            <Date>August 2019 - August 2021</Date>
           </Li>
           <Li>
             <H4>UX Designer </H4>
