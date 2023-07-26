@@ -111,7 +111,7 @@ const Hero = () => (
       <br></br>
       <br></br>
       Currently at {""}
-      <WorkLink href="https://www.wayhome.co.uk/">Wayhome</WorkLink>
+      <WorkLink href="https://www.nala.com/">Nala</WorkLink>
     </Description>
   </Container>
 )
