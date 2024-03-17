@@ -9,55 +9,55 @@ const CardContainer = styled.div`
   grid-column: span 5 / auto;
   border: 1px solid black;
   background-color: white;
-  min-height: 0; /* NEW */
+  min-height: 0;
   min-width: 0;
 
   @media (min-width: ${theme.breakpoints[1]}) {
     grid-column: span 2 / auto;
 
     ${({ order }) =>
-      order === 1 &&
-      `
+    order === 1 &&
+    `
     display: grid;
     grid-column: span 5 / auto;
     grid-template-columns: 1fr 24px 1fr 24px 1fr; 
   `};
 
     ${({ order }) =>
-      order === 2 &&
-      `
+    order === 2 &&
+    `
     grid-column: 1/2;
   `};
 
     ${({ order }) =>
-      order === 3 &&
-      `
+    order === 3 &&
+    `
     grid-column: 3/4;
   `};
 
     ${({ order }) =>
-      order === 4 &&
-      `
+    order === 4 &&
+    `
     grid-column: 5/6;
   `};
 
     ${({ order }) =>
-      order === 5 &&
-      `
+    order === 5 &&
+    `
 grid-column: 1/2;
 `};
 
     ${({ order }) =>
-      order === 6 &&
-      `
+    order === 6 &&
+    `
 grid-column: 3/4;
 `};
   }
 
   @media (min-width: 980px) {
     ${({ order }) =>
-      order === 1 &&
-      `
+    order === 1 &&
+    `
   grid-template-columns: 1fr 36px 1fr 36px 1fr; 
   `}
   }
@@ -77,8 +77,8 @@ background-color: ${backgroundColor};
 
   @media (min-width: ${theme.breakpoints[1]}) {
     ${({ order }) =>
-      order === 1 &&
-      `
+    order === 1 &&
+    `
       flex-direction: row;
     border-bottom: none;
     border-right: 1px solid black;
@@ -96,8 +96,8 @@ const CardDescription = styled.div`
 
   @media (min-width: ${theme.breakpoints[1]}) {
     ${({ order }) =>
-      order === 1 &&
-      `
+    order === 1 &&
+    `
 
 padding-left: 0px;
 padding-bottom: 0px;
@@ -131,7 +131,7 @@ const ArticleIntro = styled.p`
 
 const ArticleCard = ({ post }) => {
   /* const { edges: posts } = data.allMarkdownRemark */
-
+  console.log(post)
   return (
     <CardContainer key={post.frontmatter.id} order={post.frontmatter.order}>
       <CardImageHolder
@@ -146,21 +146,23 @@ const ArticleCard = ({ post }) => {
           }
           // the 3rd post has a vertical image rather than a horizontal one
           style={
-            post.frontmatter.order === 4
+            post.order === 4
               ? {
-                  maxWidth: "340px",
-                  margin: "0 auto",
-                  top: "50%",
-                  transform: "translateY(-50%)",
-                }
+                maxWidth: "340px",
+                margin: "0 auto",
+                position: "relative",
+                // top: "50%",
+                // transform: "translateY(-50%)",
+              }
               : {
-                  maxWidth: "400px",
-                  margin: "0 auto",
-                  top: "50%",
-                  transform: "translateY(-50%)",
-                }
+                maxWidth: "400px",
+                margin: "0 auto",
+                position: "relative",
+                top: "50%",
+                transform: "translateY(-50%)",
+              }
           }
-          // imgStyle={{ objectFit: "contain" }}
+        // imgStyle={{ objectFit: "contain" }}
         />
       </CardImageHolder>
       <CardDescription order={post.frontmatter.order}>
