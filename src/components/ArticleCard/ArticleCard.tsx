@@ -17,8 +17,8 @@ interface CardImageHolderProps extends OrderProps {
 
 const CardContainer = styled.div<OrderProps>`
   grid-column: span 5 / auto;
-  border: 1px solid black;
-  background-color: white;
+  border: 1px solid var(--dark-border, black);
+  background-color: var(--dark-primary-background, white);
   min-height: 0;
   min-width: 0;
 
@@ -75,7 +75,7 @@ grid-column: 3/4;
 
 const CardImageHolder = styled.div<CardImageHolderProps>`
   grid-column: 1/4;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--dark-border, black);
   padding: 32px;
   height: 320px;
 
@@ -89,7 +89,7 @@ background-color: ${backgroundColor};
       `
       flex-direction: row;
     border-bottom: none;
-    border-right: 1px solid black;
+    border-right: 1px solid var(--dark-border, black);
     padding: 32px;
   `};
   }
@@ -117,7 +117,7 @@ const ArticleType = styled.p`
   font-size: ${theme.fontSizes[0]};
   text-transform: uppercase;
   font-weight: 700;
-  color: ${theme.colors.grey600};
+  color: var(--dark-secondary-text, ${theme.colors.grey600});
   margin-bottom: ${theme.space[1]};
 `;
 
@@ -135,7 +135,7 @@ const ArticleHeading = styled(
 )`
   ${theme.textStyles.heading3}
   text-decoration: none;
-  color: ${theme.colors.grey800};
+  color: var(--dark-text, ${theme.colors.grey800});
   display: block;
   margin-bottom: ${theme.space[4]};
 `;

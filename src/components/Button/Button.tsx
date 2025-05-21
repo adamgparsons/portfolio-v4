@@ -14,12 +14,12 @@ const ButtonHolder = styled.div`
 
 const ButtonStyling = `
   display: block;
-  color: ${theme.colors.grey800};
+  color: var(--dark-text, ${theme.colors.grey800});
   position: relative;
   font-weight: 700;
   text-decoration: none;
-  background-color: white;
-  border: 1px solid ${theme.colors.grey800};
+  background-color: var(--dark-button-background, white);
+  border: 1px solid var(--dark-border, ${theme.colors.grey800});
   padding: 8px ${theme.space[4]};
   transition: all 250ms cubic-bezier(0.19, 1, 0.22, 1);
 
@@ -51,12 +51,12 @@ const FormButton = styled.button`
 `;
 
 const Shadow = styled.span`
-  background-color: white;
+  background-color: var(--dark-button-shadow-bg, white); /* Default shadow background */
   position: absolute;
   z-index: -1;
   right: -6px;
   bottom: -6px;
-  border: 1px solid ${theme.colors.grey800};
+  border: 1px solid var(--dark-border, ${theme.colors.grey800});
   width: 100%;
   height: 48px;
 
