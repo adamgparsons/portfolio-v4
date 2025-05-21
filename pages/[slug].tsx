@@ -1,4 +1,5 @@
 import fs from "fs";
+import path from "path";
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
@@ -22,7 +23,18 @@ export default function PostPage({
   );
 }
 export async function getStaticPaths() {
-  return { paths: [], fallback: "blocking" };
+  const articlesDirectory = path.join(process.cwd(), "articles");
+  const filenames = fs.readdirSync(articlesDirectory);
+
+  const paths = filenames
+    .filter((filename) => filename.endsWith(".mdx"))
+    .map((filename) => ({
+      params: {
+        slug: filename.replace(/\.mdx$/, ""),
+      },
+    }));
+
+  return { paths, fallback: false };
 }
 
 export async function getStaticProps(
