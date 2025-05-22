@@ -33,10 +33,7 @@ const TagLine = styled.p`
   max-width: 600px;
 `;
 
-const ErrorMessage = styled.p`
-  ${theme.textStyles.body};
-  color: ${theme.colors.validationRed};
-`;
+// Removed unused ErrorMessage styled component
 
 const initialState = {
   name: "",
@@ -77,7 +74,7 @@ export const Contact = () => {
       } else {
         setResult(data.message);
       }
-    } catch (error) {
+    } catch (_error) { // Changed 'error' to '_error' as it's unused
       setResult("An error occurred. Please try again.");
     }
   };

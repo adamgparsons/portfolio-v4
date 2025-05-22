@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import theme from "../../styles/theme";
 import { Button } from "..";
-import Link from "next/link";
-import Image from "next/image";
+import { Link } from "react-router-dom"; // Replaced next/link
+// Removed: import Image from "next/image";
 import { ArticlePreview } from "../../../types/articles";
-import { relative } from "path";
+// Removed: import { relative } from "path";
 
 interface OrderProps {
   order: number;
@@ -128,7 +128,7 @@ interface ArticleHeadingProps {
 
 const ArticleHeading = styled(
   ({ to, children, ...rest }: ArticleHeadingProps) => (
-    <Link href={to} {...rest}>
+    <Link to={`/articles/${to}`} {...rest}> {/* Changed href to to and updated path */}
       {children}
     </Link>
   )
@@ -166,12 +166,17 @@ export const ArticleCard = ({ article }: ArticleCardProps) => {
             position: "relative",
           }}
         >
-          <Image
+          <img
             src={`/${article.cover}`}
-            alt="Descriptive alt text"
-            // layout="fill"
-            objectFit="contain"
-            fill={true}
+            alt="Descriptive alt text" // Keep alt text
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "contain",
+            }}
           />
         </div>
       </CardImageHolder>
@@ -181,7 +186,7 @@ export const ArticleCard = ({ article }: ArticleCardProps) => {
         </ArticleType>
         <ArticleHeading to={article.path}>{article.title}</ArticleHeading>
         <ArticleIntro order={article.order}>{article.intro}</ArticleIntro>
-        <Button to={article.path} themeColor={article.themeColor}>
+        <Button to={`/articles/${article.path}`} themeColor={article.themeColor}> {/* Updated path for Button */}
           Read more
         </Button>
       </CardDescription>

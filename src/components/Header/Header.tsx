@@ -1,5 +1,5 @@
 import theme from "../../styles/theme";
-import Link from "next/link";
+import { Link as RouterLink } from "react-router-dom"; // Replaced next/link
 import React from "react";
 import styled from "styled-components";
 import { GithubLink } from "..";
@@ -55,19 +55,15 @@ const Logo = styled.a`
   }
 `;
 
-type LogoProps = {
-  href: string;
-  children: React.ReactNode;
-  className?: string;
-};
+// Removed unused LogoProps type definition
 
 export const Header = () => (
   <header>
     <Container>
       <h1 style={{ margin: 0 }}>
-        <Link href="/" passHref legacyBehavior>
+        <RouterLink to="/"> {/* Changed Link to RouterLink, updated props */}
           <Logo>Adam Parsons</Logo>
-        </Link>
+        </RouterLink>
       </h1>
       <GithubLink />
     </Container>
