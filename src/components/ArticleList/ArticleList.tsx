@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import squiggle from "../../../../public/images/squiggle.svg";
+// Removed: import squiggle from "../../../../public/images/squiggle.svg";
 import { ArticlePreview } from "../../../types/articles";
 import theme from "../../styles/theme";
 import { ArticleCard } from "..";

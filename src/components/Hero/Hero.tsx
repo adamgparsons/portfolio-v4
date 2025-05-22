@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import underline from "../../../../public/images/underline.svg";
+// Removed: import underline from "../../../../public/images/underline.svg";
 import theme from "../../styles/theme";
 
 const Container = styled.div`

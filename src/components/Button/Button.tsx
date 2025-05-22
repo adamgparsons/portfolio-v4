@@ -1,5 +1,5 @@
 import theme from "../../styles/theme";
-import Link from "next/link";
+import { Link as RouterLink } from "react-router-dom";
 import React from "react";
 import styled from "styled-components";
 
@@ -35,7 +35,7 @@ interface InternalLinkProps {
 }
 
 const InternalLink = styled(({ to, ...rest }: InternalLinkProps) => (
-  <Link href={to} {...rest} />
+  <RouterLink to={to} {...rest} />
 ))`
   ${theme.textStyles.body};
   ${ButtonStyling}
