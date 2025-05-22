@@ -1,0 +1,112 @@
+/* src/styles/dark-mode.css */
+
+/* Define CSS variables for dark mode from theme.colors.darkColors */
+:root {
+  --dark-background: #1A202C; /* theme.colors.darkColors.background */
+  --dark-text: #F7FAFC; /* theme.colors.darkColors.text */
+  --dark-secondary-text: #A0AEC0; /* theme.colors.darkColors.secondaryText */
+  --dark-primary-background: #2D3748; /* theme.colors.darkColors.primaryBackground */
+  --dark-secondary-background: #1A202C; /* theme.colors.darkColors.secondaryBackground */
+  --dark-border: #4A5568; /* theme.colors.darkColors.border */
+  --dark-brandBlue: #4E97D0; /* theme.colors.darkColors.brandBlue */
+  --dark-validationRed: #E53E3E; /* theme.colors.darkColors.validationRed */
+
+  /* Button specific dark mode variables */
+  --dark-button-background: var(--dark-brandBlue); /* Default button background in dark mode */
+  --dark-button-shadow-bg: var(--dark-secondary-background); /* Default button shadow in dark mode */
+
+  /* Reversed greyscale for dark mode */
+  --dark-grey100: #1A202C; /* theme.colors.darkColors.grey100 (Darkest) */
+  --dark-grey200: #2D3748; /* theme.colors.darkColors.grey200 */
+  --dark-grey300: #4A5568; /* theme.colors.darkColors.grey300 */
+  --dark-grey400: #718096; /* theme.colors.darkColors.grey400 */
+  --dark-grey500: #A0AEC0; /* theme.colors.darkColors.grey500 */
+  --dark-grey600: #CBD5E0; /* theme.colors.darkColors.grey600 */
+  --dark-grey700: #E2E8F0; /* theme.colors.darkColors.grey700 */
+  --dark-grey800: #EDF2F7; /* theme.colors.darkColors.grey800 */
+  --dark-grey900: #F7FAFC; /* theme.colors.darkColors.grey900 (Lightest) */
+}
+
+/* Apply dark mode styles when html.dark-mode is active */
+html.dark-mode {
+  background-color: var(--dark-background);
+  color: var(--dark-text);
+  /* Smoother color transitions for theme switching */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark-mode body {
+  background-color: var(--dark-background);
+  color: var(--dark-text);
+}
+
+html.dark-mode h1,
+html.dark-mode h2,
+html.dark-mode h3,
+html.dark-mode h4,
+html.dark-mode h5,
+html.dark-mode h6 {
+  color: var(--dark-text); /* Primary text color for headings */
+}
+
+/* Update textStyles from theme for dark mode */
+html.dark-mode .textStyle-heading1 { /* Corresponds to theme.textStyles.heading1.color */
+  color: var(--dark-text);
+}
+
+html.dark-mode .textStyle-heading2 { /* Corresponds to theme.textStyles.heading2.color */
+  color: var(--dark-text);
+}
+
+html.dark-mode .textStyle-heading3 { /* Corresponds to theme.textStyles.heading3.color */
+  color: var(--dark-secondary-text); /* Using secondary text for H3 as it's a bit lighter in the original theme */
+}
+
+html.dark-mode .textStyle-body { /* Corresponds to theme.textStyles.body.color */
+  color: var(--dark-secondary-text);
+}
+
+html.dark-mode a {
+  color: var(--dark-brandBlue);
+}
+
+html.dark-mode a:hover {
+  color: var(--dark-grey700); /* Lighter blue or a light grey for hover */
+}
+
+/* General container/element styling for dark mode */
+html.dark-mode .card, /* Example class for card-like elements */
+html.dark-mode .modal-content { /* Example class for modal content */
+  background-color: var(--dark-primary-background);
+  color: var(--dark-text);
+  border-color: var(--dark-border);
+}
+
+html.dark-mode hr {
+  border-top-color: var(--dark-border);
+}
+
+/* Form elements */
+html.dark-mode input,
+html.dark-mode textarea,
+html.dark-mode select,
+html.dark-mode button {
+  background-color: var(--dark-secondary-background);
+  color: var(--dark-text);
+  border: 1px solid var(--dark-border);
+}
+
+html.dark-mode input::placeholder,
+html.dark-mode textarea::placeholder {
+  color: var(--dark-grey500);
+}
+
+html.dark-mode button {
+  background-color: var(--dark-brandBlue);
+  color: var(--dark-text); /* Ensuring text on buttons is light */
+}
+
+html.dark-mode button.secondary {
+  background-color: var(--dark-grey300);
+  color: var(--dark-text);
+}

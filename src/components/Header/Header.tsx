@@ -41,7 +41,7 @@ const Container = styled.div`
 const Logo = styled.a`
   ${theme.textStyles.heading3};
   font-size: 18px;
-  color: ${theme.colors.grey800};
+  color: var(--dark-text, ${theme.colors.grey800});
   text-decoration: none;
   margin-bottom: 32px;
   transition: color 0.2s ease-in;

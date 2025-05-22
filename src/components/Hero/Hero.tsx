@@ -28,10 +28,14 @@ const Container = styled.div`
 
 const Hi = styled.h2`
   ${theme.textStyles.heading2}
+  /* Apply dark mode compatible color, fallback to theme's default (grey800 from textStyles) */
+  color: var(--dark-text, ${theme.colors.grey800}); 
   margin-bottom: ${theme.space[5]};
 
   @media (min-width: 550px) {
     ${theme.textStyles.heading1};
+    /* Ensure color override persists for larger size if textStyle changes color */
+    color: var(--dark-text, ${theme.colors.grey800}); 
     margin-bottom: ${theme.space[5]};
   }
 `;
@@ -39,12 +43,14 @@ const Hi = styled.h2`
 const Description = styled.p`
   ${theme.textStyles.heading3}
   font-weight: 400;
-  color: ${theme.colors.grey800};
+  /* Apply dark mode compatible color, fallback to theme's default */
+  color: var(--dark-text, ${theme.colors.grey800});
 
   @media (min-width: 550px) {
     ${theme.textStyles.heading2};
     font-weight: 400;
-    color: ${theme.colors.grey800};
+    /* Ensure color override persists for larger size */
+    color: var(--dark-text, ${theme.colors.grey800});
   }
 `;
 
@@ -56,14 +62,14 @@ const SecondSentence = styled.span`
 `;
 
 const WorkLink = styled.a`
-  color: ${theme.colors.grey700};
+  color: var(--dark-secondary-text, ${theme.colors.grey700});
   text-decoration: none;
   padding-bottom: 0px;
-  box-shadow: inset 0 -0.175em white, inset 0 -0.22em ${theme.colors.grey700};
+  box-shadow: inset 0 -0.175em var(--dark-background, white), inset 0 -0.22em var(--dark-secondary-text, ${theme.colors.grey700});
   transition: color 0.2s ease-in, box-shadow 0.2s ease-in;
   &:hover {
-    color: #4e97d0;
-    box-shadow: inset 0 -0.175em white, inset 0 -0.22em #4e97d0;
+    color: var(--dark-brandBlue, #4e97d0);
+    box-shadow: inset 0 -0.175em var(--dark-background, white), inset 0 -0.22em var(--dark-brandBlue, #4e97d0);
     cursor: pointer;
   }
 `;

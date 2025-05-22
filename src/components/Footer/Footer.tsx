@@ -19,7 +19,7 @@ const Container = styled.div`
 
 const P = styled.p`
   ${theme.textStyles.body};
-  color: ${theme.colors.grey900};
+  color: var(--dark-text, ${theme.colors.grey900});
 `;
 
 export const Footer = () => (

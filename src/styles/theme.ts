@@ -77,6 +77,29 @@ const theme = {
     white0125: "rgba(255,255,255,.0125)",
     brandBlue: "#4E97D0",
     validationRed: "#E53E3E",
+    // Dark mode specific colors
+    darkColors: {
+      background: "#1A202C", // Using grey900
+      text: "#F7FAFC", // Using grey100
+      secondaryText: "#A0AEC0", // Using grey500
+      primaryBackground: "#2D3748", // Using grey800
+      secondaryBackground: "#1A202C", // Using grey900
+      // Borders and dividers
+      border: "#4A5568", // Using grey700
+      // Brand colors - might need adjustment for contrast later
+      brandBlue: "#4E97D0",
+      validationRed: "#E53E3E",
+      // Greyscale for dark mode
+      grey100: "#1A202C", // Darkest
+      grey200: "#2D3748",
+      grey300: "#4A5568",
+      grey400: "#718096",
+      grey500: "#A0AEC0",
+      grey600: "#CBD5E0",
+      grey700: "#E2E8F0",
+      grey800: "#EDF2F7",
+      grey900: "#F7FAFC", // Lightest
+    },
   },
 };
 
